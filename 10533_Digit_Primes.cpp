@@ -11,7 +11,14 @@ ll isDigitPrime(ll n){
     n /= 10;
   }
 
+
   return sum;
+}
+
+ll max(int a, int b){
+  if(a>b)
+  return a;
+  return b;
 }
 
 ll digitPrimesInRange(ll x,ll y,vector<ll> &v){
