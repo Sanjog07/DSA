@@ -1,0 +1,40 @@
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+//         int n = nums.size();
+        
+//         int s = 0;
+//         int e = n-1;
+        
+//         while(s <= e){
+//             int mid = (s+e) >> 1;
+//             if((mid == 0 && nums[mid] > nums[mid+1]) || (mid == n-1 && nums[mid] > nums[mid-1]){
+//                 return mid;
+//             }
+//             if(nums[mid] > nums[mid-1] && nums[mid] < nums[mid+1]){
+//                 return mid;
+//             }
+               
+            
+//         }
+        
+        map<int,int> m;
+        int n = nums.size();
+        
+        for(int i=0; i<n; i++){
+            m[nums[i]] = i;
+        }
+        
+        
+        //as humne map liya hai unordered map nhi to ye sorted hoga
+        // and array ka max element bhi one of the peak element hoga
+        // so hum max element return krenge
+        
+        auto it = m.rbegin(); 
+        // m.end() work nhi krega bcz vo last element ke next 
+        // pe pt krta hai
+        
+        
+        return it->second;
+    }
+};
