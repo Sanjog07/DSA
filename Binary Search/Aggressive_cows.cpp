@@ -13,7 +13,7 @@ bool rkhSkteHai(ll dist, ll c,ll n, ll arr[]){
 	                                  // pe hi rkh do  
 
 	for(ll i=1; i<n; i++){
-		if((arr[i] - prev)  >= dist){
+		if((arr[i] - prev)  >= dist){                    
 			cnt++;
 			prev = arr[i];
 			if(cnt == c){

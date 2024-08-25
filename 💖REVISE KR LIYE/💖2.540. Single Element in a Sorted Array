@@ -1,0 +1,36 @@
+// 540. Single Element in a Sorted Array
+
+
+
+
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        
+        int s = 0;
+        int e = n-2;
+        
+        // as 0 is even so if mid = 0 then mid-1 wala case aayega hi nhi
+        // but also n-1 is even -> so if mid = n-1 then mid+1 will be out of bounds
+        
+        while(s <= e){
+            int mid = (s+e) >> 1;
+            if((mid&1) == 0){ // even idx
+                if(nums[mid] == nums[mid+1]){
+                    s = mid + 1;
+                }else{
+                    e = mid - 1;
+                }
+            }else{ // odd idx
+                if(nums[mid] == nums[mid-1]){
+                    s = mid + 1;
+                }else{
+                    e = mid - 1;
+                }
+            }
+        }
+        
+        return nums[s];
+    }
+};

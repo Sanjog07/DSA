@@ -1,7 +1,7 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        // so basically rorated and sorted array mei
+        // so basically rotated and sorted array mei
         // agr hum ek idx pe hai to uski left side 
         // ya uski right side i.e ek side to pakka 
         // sorted hogi and then hum sorted side mei
@@ -35,7 +35,7 @@ public:
                     s = mid+1;
                 }
                 
-                // if right part is sorted
+            // if right part is sorted
             }else{
                 if(target >= nums[mid] && target <= nums[e]){
                     s = mid+1;
